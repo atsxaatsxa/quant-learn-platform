@@ -1,0 +1,19 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ===== WorkBuddy 项目数据（不入库） =====
+.workbuddy/
+
+# ===== 本地行情缓存（由 tools/init_data.py 重新生成） =====
+data/cache/
+
+# ===== 操作系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
