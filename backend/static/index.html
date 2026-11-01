@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>量化投资学习平台 · MVP</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <!-- 合规红线：显著位置风险提示 -->
+  <div id="risk-banner">
+    ⚠️ 风险提示：本平台仅用于<strong>学习与研究</strong>，所有结果均为<strong>历史回测模拟</strong>，
+    <strong>不构成任何投资建议，不承诺收益</strong>。过往表现不代表未来。请勿据此实盘交易。
+  </div>
+
+  <header class="topbar">
+    <div class="brand">📈 量化投资学习平台 <span class="sub">零基础也能跑通完整回测</span></div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="teaching">① 学习路线图</button>
+      <button class="tab" data-tab="config">② 策略配置</button>
+      <button class="tab" data-tab="report">③ 回测报告</button>
+      <button class="tab" data-tab="risk">④ 数据与风险</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 教学层 -->
+    <section id="tab-teaching" class="tabpane active">
+      <p class="hint">按步骤来，每一步都能在平台里真实点一下跑通。金融术语首次出现会附一句白话解释。</p>
+      <div id="roadmap-list" class="roadmap"></div>
+      <div id="glossary-box" class="glossary"></div>
+    </section>
+
+    <!-- 策略配置 -->
+    <section id="tab-config" class="tabpane">
+      <div class="card">
+        <h2>策略配置（参数化模板 · 新手免代码）</h2>
+        <label>选择策略模板</label>
+        <select id="strategy-select"></select>
+        <div id="param-form" class="param-form"></div>
+
+        <div class="row">
+          <div><label>回测起点</label><input type="date" id="date-start" /></div>
+          <div><label>回测终点</label><input type="date" id="date-end" /></div>
+        </div>
+
+        <label class="checkline">
+          <input type="checkbox" id="code-mode-toggle" /> 进阶：使用代码编辑入口（自定义 Python 策略）
+        </label>
+        <textarea id="code-editor" class="code-editor" style="display:none"></textarea>
+
+        <div class="actions">
+          <button id="run-btn" class="primary">▶ 运行回测</button>
+          <span id="config-status" class="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 回测报告 -->
+    <section id="tab-report" class="tabpane">
+      <div id="report-empty" class="hint">还没有报告。去「学习路线图」点任一步骤，或到「策略配置」运行回测。</div>
+      <div id="report-content" style="display:none"></div>
+    </section>
+
+    <!-- 数据与风险 -->
+    <section id="tab-risk" class="tabpane">
+      <div id="risk-content" class="card"></div>
+    </section>
+  </main>
+
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
