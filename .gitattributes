@@ -1,0 +1,14 @@
+# 统一换行符为 LF，避免 Windows/macOS/Linux 跨平台差异
+* text=auto eol=lf
+
+# 显式声明文本类型
+*.py text
+*.md text
+*.yaml text
+*.yml text
+*.html text
+*.css text
+*.js text
+*.json text
+*.csv text
+*.svg text
